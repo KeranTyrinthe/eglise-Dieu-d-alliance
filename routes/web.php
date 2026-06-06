@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MembreController;
+use App\Http\Controllers\FinanceController;
 
 // Route racine - Login
 Route::get('/', function () {
@@ -32,6 +33,14 @@ Route::get('/backoffice/gestion-membre/{id}/edit', [MembreController::class, 'ed
 Route::put('/backoffice/gestion-membre/{id}', [MembreController::class, 'update'])->name('membres.update');
 Route::delete('/backoffice/gestion-membre/{id}', [MembreController::class, 'destroy'])->name('membres.destroy');
 
+// Gestion Financière
+Route::get('/backoffice/gestion-financiere/dashboard', [FinanceController::class, 'dashboard'])->name('finances.dashboard');
+Route::get('/backoffice/gestion-financiere/analytiques', [FinanceController::class, 'analytiques'])->name('finances.analytiques');
+Route::get('/backoffice/gestion-financiere/transactions', [FinanceController::class, 'transactions'])->name('finances.transactions');
+Route::get('/backoffice/gestion-financiere/rapports', [FinanceController::class, 'rapports'])->name('finances.rapports');
+Route::post('/backoffice/gestion-financiere/store', [FinanceController::class, 'store'])->name('finances.store');
+Route::put('/backoffice/gestion-financiere/{id}', [FinanceController::class, 'update'])->name('finances.update');
+Route::delete('/backoffice/gestion-financiere/{id}', [FinanceController::class, 'destroy'])->name('finances.destroy');
 
 /*Route::get('/dashboard', function () {
 return view('dashboard');

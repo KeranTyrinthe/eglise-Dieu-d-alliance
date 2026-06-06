@@ -155,4 +155,4 @@
     </main>
 </body>
 
-</html>
+</html><?php /**PATH C:\laragon\www\eglise-Dieu-d-alliance\resources\views/backoffice/menu.blade.php ENDPATH**/ ?>
